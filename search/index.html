@@ -29,11 +29,10 @@ textarea {
 
 <div style="max-width: 640px; width: 100%;">
     <p>
-        <label><input type="radio" name="engine" value="https://www.torrentmoa.com/?_filter=search&act=&vid=&mid=JAV&category=&search_target=title_content&search_keyword=" checked="checked" />토렌트</label>
-        <label><input type="radio" name="engine" value="https://www.yatori.net/bbs/search.php?sfl=wr_subject%7C%7Cwr_content&sop=and&stx=" />야토리</label>
-         <label><input type="radio" name="engine" value="https://m.btku.org/q/" />BTKU</label>
-
-        <label><input type="radio" name="engine" value="https://search.naver.com/search.naver?where=nexearch&query=" />네이버</label>
+        <label><input type="radio" name="engine" value="https://www.torrentmoa.com/?_filter=search&act=&vid=&mid=JAV&category=&search_target=title_content&search_keyword=" checked="checked" />Torrent</label>
+        <label><input type="radio" name="engine" value="https://www.yatori.net/bbs/search.php?sfl=wr_subject%7C%7Cwr_content&sop=and&stx=" />Tori</label>
+        <label><input type="radio" name="engine" value="https://m.btku.org/q/" />BTKU</label>
+        <label><input type="radio" name="engine" value="https://search.naver.com/search.naver?where=nexearch&query=" />Naver</label>
     </p>
     <p>
         <input id="query" type="text" class="text" />
@@ -69,7 +68,7 @@ $(function(){
 
     $reset.on('click', function(e){
         e.preventDefault();
-        $textarea.val('').fo
+        $textarea.val('');
     }).eq(0).trigger('click');
 
     $submit.on('click', function(e){
