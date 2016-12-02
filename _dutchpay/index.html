@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>회비</title>
+</head>
+<body>
+<script>
+function divide(members, money){
+	var weight=[], share=[];
+	var weightSum = 0, shareSum = 0;
+	for(var i=0; i<members; i++){
+		weight[i] = Number(window.prompt((i+1)+'번의 가중치를 입력하세요'));
+		weightSum+= weight[i];
+	}
+	var calc = money / weightSum;
+	document.write('총액: ' + money + ' , 가중치합계: ' + weightSum + ' , 기본금: ' + calc+'<br>');
+	for(var j=0; j<members; j++){
+		share[j] = Math.round(weight[j] * calc / 100) * 100;
+		document.write('<br>'+(j+1)+'번 (가중치 '+weight[j]+')에 해당하는 지급액 : '+share[j]+'원');
+		shareSum+= share[j];
+	}
+	document.write('<br><br>총액 확인: '+shareSum);
+}
+var mem = Number(window.prompt('몇 명입니까?'));
+var mon = Number(window.prompt('총 금액이 얼마입니까?'));
+if(mem>=1 && mem<=100) divide(mem, mon);
+else document.write('1명 이상, 100명 이하로만 입력해주세요... 계산 힘들어요 ;ㅅ; ')
+</script>	
+</body>
+</html>

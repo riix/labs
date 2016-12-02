@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-language" content="kr" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>Youtube List</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<!-- meta name="viewport" content="width=980px" / -->
+<script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
+<script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>')</script>
+<style>
+input[type="text"],
+textarea {
+    width: 100%;
+}
+textarea {
+    height: 150px;
+}
+.button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+}
+</style>
+</head>
+<body class="page-default"><!-- body class -->
+
+<div style="max-width: 640px; width: 100%;">
+    <p>
+        <label><input type="radio" name="engine" value="https://www.torrentmoa.com/?_filter=search&act=&vid=&mid=JAV&category=&search_target=title_content&search_keyword=" checked="checked" />토렌트</label>
+        <label><input type="radio" name="engine" value="https://www.yatori.net/bbs/search.php?sfl=wr_subject%7C%7Cwr_content&sop=and&stx=" />야토리</label>
+         <label><input type="radio" name="engine" value="https://m.btku.org/q/" />BTKU</label>
+
+        <label><input type="radio" name="engine" value="https://search.naver.com/search.naver?where=nexearch&query=" />네이버</label>
+    </p>
+    <p>
+        <input id="query" type="text" class="text" />
+    </p>
+    <p>
+        <textarea id="textarea"></textarea>
+    </p>
+    <div class="clearfix">
+        <div style="float: left; width: 50%;">
+            <p>
+                <a href="#!" id="reset" class="button"><span>Reset</span></a>
+            </p>
+        </div>
+        <div style="float: left; width: 50%;">
+            <p>
+                <a href="#!" id="submit" class="button"><span>Submit</span></a>
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+
+    var $radio = $('input[type="radio"]'),
+        $input = $('input[type="text"]'),
+        $textarea = $('textarea'),
+        $reset = $('#reset');
+        $submit = $('#submit');
+
+    $radio.on('click', function(e){
+        $input.val($(this).val());
+    }).eq(0).trigger('click');
+
+    $reset.on('click', function(e){
+        e.preventDefault();
+        $textarea.val('').fo
+    }).eq(0).trigger('click');
+
+    $submit.on('click', function(e){
+
+        e.preventDefault();
+
+        var _values = $textarea.val(),
+            _q,
+            _val,
+            _length;
+
+        _q = $input.val();
+
+        if (_values == '' || _values == null) return false;
+
+        _values = _values.split('\n');
+
+        $.each(_values, function(i){
+
+            if (_values[i] == '') return false;
+
+            _val = _values[i].split(' ')[0]; // 공백 뒤 제거
+            _val = _values[i].split('\t')[0]; // 공백 뒤 제거
+
+            if (_val.indexOf('/') < 0) {
+                _val = _q + _val;
+                // console.log(_val);
+                window.open(_val);
+            }
+
+        });
+
+    });
+});
+</script>
+</body>
+</html>
