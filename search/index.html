@@ -101,7 +101,7 @@ $(function(){
             _val = _values[i].split(' ')[0]; // 공백 뒤 제거
             _val = _values[i].split('\t')[0]; // 공백 뒤 제거
 
-            if (_val.indexOf('/') < 0 ) {
+            if (_val.indexOf('/') < 0 && _val.indexOf(',') < 0 ) {
                 _val = _q + _val;
                 // console.log(_val);
                 window.open(_val);
