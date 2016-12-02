@@ -33,6 +33,8 @@ textarea {
         <label><input type="radio" name="engine" value="https://www.yatori.net/bbs/search.php?sfl=wr_subject%7C%7Cwr_content&sop=and&stx=" />Tori</label>
         <label><input type="radio" name="engine" value="https://m.btku.org/q/" />BTKU</label>
         <label><input type="radio" name="engine" value="https://search.naver.com/search.naver?where=nexearch&query=" />Naver</label>
+        <label><input type="radio" name="engine" value="https://www.google.co.kr/webhp?ie=UTF-8#q=" />Google</label>
+
     </p>
     <p>
         <input id="query" type="text" class="text" />
@@ -93,7 +95,7 @@ $(function(){
             _val = _values[i].split(' ')[0]; // 공백 뒤 제거
             _val = _values[i].split('\t')[0]; // 공백 뒤 제거
 
-            if (_val.indexOf('/') < 0) {
+            if (_val.indexOf('/') < 0 ) {
                 _val = _q + _val;
                 // console.log(_val);
                 window.open(_val);
