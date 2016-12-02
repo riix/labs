@@ -6,10 +6,10 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <title>Youtube List</title>
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 <!-- meta name="viewport" content="width=980px" / -->
 <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
-<script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>')</script>
 <style type="text/css">
 <!--
 html, body {
@@ -33,7 +33,7 @@ p {
     text-align: left;
 }
 #nav { text-align: left; font-size: 12px; }
-#nav ul { margin: 0 0 5px; padding: 0; list-style: none; overflow: hidden; } 
+#nav ul { margin: 0 0 5px; padding: 0; list-style: none; overflow: hidden; }
 #nav li { float: left; margin: 5px; }
 #nav a { text-decoration: none; }
 #nav span { display: block; padding: 10px; background-color: #eee; color: #333; border-radius: 5px; }
@@ -59,7 +59,7 @@ p {
     height: 100%;
 }
 -->
-</style> 
+</style>
 </head>
 <body><!-- body class -->
 
@@ -73,7 +73,7 @@ p {
 </div>
 
 <div id="container">
-    <div id="result" class="pure-g"></div> 
+    <div id="result" class="pure-g"></div>
 </div>
 
 <script>
@@ -110,7 +110,7 @@ $(function(){
             return _result;
         },
         returnEmbed: function(_src){ // return embed code
-            var _video = 'https://www.youtube.com/v/' + _src + '?autoplay=1&amp;rel=0&amp;showinfo=0&amp;modestbranding=1';           
+            var _video = 'https://www.youtube.com/v/' + _src + '?autoplay=1&amp;rel=0&amp;showinfo=0&amp;modestbranding=1';
             var _result = '<object class="ratio" allowfullscreen>';
             _result += '<param name="movie" value="' + _video + '"></param>';
             _result += '<param name="allowScriptAccess" value="always"></param>';
@@ -134,7 +134,7 @@ $(function(){
     _id = (_id !== undefined) ? _id : 0;
     _sheet = (_sheets[_id] !== undefined) ? _sheets[_id] : _sheets[0];
 
-    $('#nav li').eq(_id).addClass('in');   
+    $('#nav li').eq(_id).addClass('in');
 
     var _url = "https://spreadsheets.google.com/feeds/list/" + _sheet + "/od6/public/values?alt=json";
 
@@ -181,7 +181,3 @@ $(function(){
 </script>
 </body>
 </html>
-
-
-
- 
