@@ -3,4 +3,4 @@ public labs
 
 ## Chameleon Navigation
 
-[바로가기](ttps://riix.github.io/labs/chameleonNav/dist/)
+[바로가기](https://riix.github.io/labs/chameleonNav/dist/)
